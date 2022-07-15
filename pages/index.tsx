@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
   //Fetches data from the NextJS server and dispatches it to the redux store
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/stacklineData`)
+    fetch(`/api/stacklineData`)
       .then((res) => res.json())
       .then((data: [Item]) => dispatch(setData(data)))
       .catch((e) => console.log(e));
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Stackline</title>
         <meta
           name='Stackline Assessment'
           content='Stackline Assessment by Parth Mangrola'

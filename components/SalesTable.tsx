@@ -49,6 +49,7 @@ function SalesTable({}: Props) {
                 <Th key={heading}>
                   <Button
                     p='-4'
+                    bg='none'
                     rightIcon={<ChevronDownIcon color={'gray.400'} />}
                   >
                     <Text
