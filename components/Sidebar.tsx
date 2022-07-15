@@ -16,7 +16,7 @@ function Sidebar({}: Props) {
   const { data } = useAppSelector((state) => state.data);
 
   //If data doesn't exist, show a spinner
-  if (!data) {
+  if (!data[0].image) {
     return <Spinner />;
   } else {
     return (

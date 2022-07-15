@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       .then((res) => res.json())
       .then((data: [Item]) => dispatch(setData(data)))
       .catch((e) => console.log(e));
-  });
+  }, []);
 
   return (
     <div>

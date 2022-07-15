@@ -9,6 +9,7 @@ import {
   Flex,
   Button,
   Text,
+  Stack,
 } from '@chakra-ui/react';
 import { Item, SalesData } from '@/types/index';
 import { useAppSelector } from '@/app/hooks';
@@ -26,15 +27,6 @@ function SalesTable({}: Props) {
     sales = item.sales;
   });
 
-  //Tables headings to map over
-  const headings = [
-    'Week Ending',
-    'Retail Sales',
-    'Wholesale Sales',
-    'Units Sold',
-    'Retailer Margin',
-  ];
-
   return (
     <Flex bg='white' color='black' boxShadow={'md'}>
       <TableContainer w='100%'>
@@ -45,23 +37,90 @@ function SalesTable({}: Props) {
         >
           <Thead>
             <Tr>
-              {headings.map((heading) => (
-                <Th key={heading}>
-                  <Button
-                    p='-4'
-                    bg='none'
-                    rightIcon={<ChevronDownIcon color={'gray.400'} />}
+              <Th>
+                <Button
+                  px='-4'
+                  mx='-4'
+                  bg='none'
+                  rightIcon={<ChevronDownIcon color={'gray.400'} />}
+                >
+                  <Text
+                    fontWeight={400}
+                    textTransform='uppercase'
+                    color={'gray.600'}
                   >
-                    <Text
-                      fontWeight={400}
-                      textTransform='uppercase'
-                      color={'gray.600'}
-                    >
-                      {heading}
-                    </Text>
-                  </Button>
-                </Th>
-              ))}
+                    Week Ending
+                  </Text>
+                </Button>
+              </Th>
+              <Th>
+                <Button
+                  px='-4'
+                  mx='-4'
+                  bg='none'
+                  float={'right'}
+                  rightIcon={<ChevronDownIcon color={'gray.400'} />}
+                >
+                  <Text
+                    fontWeight={400}
+                    textTransform='uppercase'
+                    color={'gray.600'}
+                  >
+                    Retail Sales
+                  </Text>
+                </Button>
+              </Th>
+              <Th>
+                <Button
+                  px='-4'
+                  mx='-4'
+                  bg='none'
+                  float={'right'}
+                  rightIcon={<ChevronDownIcon color={'gray.400'} />}
+                >
+                  <Text
+                    fontWeight={400}
+                    textTransform='uppercase'
+                    color={'gray.600'}
+                  >
+                    Wholesale Sales
+                  </Text>
+                </Button>
+              </Th>
+              <Th>
+                <Button
+                  px='-4'
+                  mx='-4'
+                  bg='none'
+                  float={'right'}
+                  rightIcon={<ChevronDownIcon color={'gray.400'} />}
+                >
+                  <Text
+                    fontWeight={400}
+                    textTransform='uppercase'
+                    color={'gray.600'}
+                  >
+                    Units Sold
+                  </Text>
+                </Button>
+              </Th>
+              <Th>
+                <Button
+                  px='-4'
+                  mx='-4'
+                  bg='none'
+                  float={'right'}
+                  rightIcon={<ChevronDownIcon color={'gray.400'} />}
+                >
+                  <Text
+                    fontWeight={400}
+                    textTransform='uppercase'
+                    color={'gray.600'}
+                  >
+                    Retailer Margin
+                  </Text>
+                </Button>
+              </Th>
             </Tr>
           </Thead>
           <Tbody color='gray.400'>
